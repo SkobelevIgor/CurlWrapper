@@ -46,12 +46,23 @@ final class CurlWrapper
     /**
      * Owerride magic methods, construct, clone
      */
-    public function __get($var){}
-    public function __set($var, $val){}
-    public function __call($meth, $props){}
-    public function __callStatic($meth, $props) {}
-    public function __clone() {}
-    public function __construct() {}
+    public function __get($var)
+    {}
+
+    public function __set($var, $val)
+    {}
+   
+    public function __call($meth, $props)
+    {}
+   
+    public function __callStatic($meth, $props)
+    {}
+   
+    public function __clone()
+    {}
+   
+    public function __construct()
+    {}
 
 
     /**
@@ -62,7 +73,6 @@ final class CurlWrapper
         if (is_null(self::_Instance)) {
            $this->_Instance = new CurlWrapper(); 
         }
-
         return $this->_Instance;
     }
 
@@ -71,7 +81,7 @@ final class CurlWrapper
      * set url to query
      * @access public
      * @var string url - decoded url to resource
-     * #return bool
+     * @return bool
      */
     public function setUrl($url ='')
     {}
@@ -82,23 +92,45 @@ final class CurlWrapper
      * @access public
      * @var string login
      * @var string pass 
+     * @return bool  
      */
     public function setAuth ($login ='', $passwd ='')
     {}
-
-    public function setGet($getParams = array())
+    
+    /**
+     * appendGet
+     * GET container 
+     * @access public
+     * @var array getParams 
+     */
+    public function appendGet($getParams =array())
     {}
 
-    public function setPost()
+    /**
+     * appendPost
+     * POST container 
+     * @access public
+     * @var array postParams 
+     */
+    public function appendPost($postParams =array())
     {}
 
-    public function setCookies()
+    /**
+     * appendCookies
+     * COOKIE container 
+     * @access public
+     * @var array cookiesParams 
+     */
+    public function appendCookies($cookiesParams =array())
     {}
 
     public function run()
     {}
 
-    private function _setOpt()
+    public function getInfo()
+    {}
+
+    private function _setOpt($optKey ='', $valueContainer)
     {}
 
     private function _cleanUp()
